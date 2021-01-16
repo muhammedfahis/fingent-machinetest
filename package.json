@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon app.js",
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000",
+    "docs" : "rm -rf public && apidoc -i ./ -o ./public/ -e node_modules -e public"
   },
   "jest": {
     "testEnvironment": "node"
