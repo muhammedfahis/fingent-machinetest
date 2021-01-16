@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.post('/login',TutorLoginController);
-router.post('/addlist',addStudentMarkController);
+router.post('/addlist',jwtVerifiyer,addStudentMarkController);
 router.patch('/:id',jwtVerifiyer,editListController);
 router.delete('/:id',jwtVerifiyer,deleteStudentController);
 
