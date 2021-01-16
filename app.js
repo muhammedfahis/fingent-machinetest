@@ -9,3 +9,5 @@ mongoose.connect(process.env.CONNECTION_URL,{useNewUrlParser:true,useUnifiedTopo
     .then(()=>app.listen(PORT,()=>console.log(`server is running on ${PORT}`)))
     .catch((error)=>console.log(error.message))
 mongoose.set('useFindAndModify',false);
+
+module.exports = app;
