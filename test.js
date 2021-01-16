@@ -1,23 +1,22 @@
 const app = require("./app")
 const chai = require('chai')
-const request = require('supertest')
+const request = require('supertest');
 
 
-describe('Test login', () => {
-    it('should login tutor', async () => {
-        await request(app)
+describe('Test Add list', () => {
+    it('should login tutor', (done) => {
+        request(app)
         .post('/tutor/login')
         .send({
             email: 'tutor@gmail.com',
             password: '123'
         })
         .expect(200)
+        .then(res => done())
     })
-})
 
-describe('Test Add list', () => {
-    it('add list', async () => {
-        await request(app)
+    it('add list', (done) => {
+        request(app)
             .post('/tutor/addlist')
             .send({
                 "name": "musthu",
@@ -28,5 +27,6 @@ describe('Test Add list', () => {
                 "total": 452
             })
             .expect(201)
+            .then(res => done())
     });
 });
