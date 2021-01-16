@@ -1,5 +1,183 @@
 define({ "api": [
   {
+    "type": "get",
+    "url": "/student",
+    "title": "",
+    "name": "Get_All_Results",
+    "group": "Student",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "Results",
+            "description": "<p>All Results.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n[\n {\n     \"subjectOne\": 54,\n     \"subjectTwo\": 78,\n     \"subjectThree\": 87,\n     \"_id\": \"60034f96fdd5e2e51b53011a\",\n     \"name\": \"musthu\",\n     \"reg_No\": 54,\n     \"total\": 534,\n     \"__v\": 0\n },\n {\n     \"subjectOne\": 47,\n     \"subjectTwo\": 95,\n     \"subjectThree\": 46,\n     \"_id\": \"6003537c17aadfeba3cc8f05\",\n     \"name\": \"faiha\",\n     \"reg_No\": 24,\n     \"total\": 422,\n     \"__v\": 0\n }\n ]",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./routes/students.js",
+    "groupTitle": "Student"
+  },
+  {
+    "type": "delete",
+    "url": "/tutor/:id",
+    "title": "",
+    "name": "Delete_Student",
+    "group": "Tutor",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id Of Student</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>ITEM WITH THE {id} HAS BEEN DELETED.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"message\": \"ITEM WITH THE 6003546c17aadfeba3cc8f06 HAS BEEN DELETED\"\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./routes/tutor.js",
+    "groupTitle": "Tutor"
+  },
+  {
+    "type": "patch",
+    "url": "/tutor/:id",
+    "title": "",
+    "name": "Edit_Student",
+    "group": "Tutor",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>JwtToken</p>"
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Id Of Student</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "name",
+            "description": "<p>Name Of Student</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "reg_No",
+            "description": "<p>Register Number Of Student.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "subOne",
+            "description": "<p>Mark Of Subject One.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "subTwo",
+            "description": "<p>Mark Of Subject Two.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "subThree",
+            "description": "<p>Mark Of Subject Three.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "total",
+            "description": "<p>Total Marks.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>STUDENT UPDATED SUCCESSFULLY.</p>"
+          },
+          {
+            "group": "200",
+            "type": "Object",
+            "optional": false,
+            "field": "updatedList",
+            "description": "<p>Updated Details Of  Student.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "   HTTP/1.1 200 OK\n{\n \"message\": \"STUDENT UPDATED SUCCESSFULLY\",\n \"updatedList\": {\n     \"subjectOne\": 54,\n     \"subjectTwo\": 78,\n     \"subjectThree\": 87,\n     \"_id\": \"6003546c17aadfeba3cc8f06\",\n     \"name\": \"fsg\",\n     \"reg_No\": null,\n     \"total\": 534,\n     \"__v\": 0\n     }\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "./routes/tutor.js",
+    "groupTitle": "Tutor"
+  },
+  {
     "type": "post",
     "url": "/tutor/login",
     "title": "",

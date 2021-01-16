@@ -77,11 +77,12 @@ router.post('/addlist',jwtVerifiyer,addStudentMarkController);
 
 
 /**
- * @api {patch} /tutor/:id  ObjectId Of Student
+ * @api {patch} /tutor/:id  
  * @apiName Edit Student
  * @apiGroup Tutor
  * @apiHeader {String} Authorization JwtToken
- * @apiParam {String} [name] Name Of Student
+ * @apiParam {String} id Id Of Student
+ * @apiParam {String} [name] Name Of Student 
  * @apiParam {String} [reg_No] Register Number Of Student.
  * @apiParam {String} [subOne] Mark Of Subject One.
  * @apiParam {String} [subTwo] Mark Of Subject Two.
@@ -110,6 +111,27 @@ router.post('/addlist',jwtVerifiyer,addStudentMarkController);
  *
  */
 router.patch('/:id',jwtVerifiyer,editListController);
+
+
+/**
+ * @api {delete} /tutor/:id  
+ * @apiName Delete Student
+ * @apiGroup Tutor
+ * @apiParam {String} id Id Of Student
+ * 
+ * 
+ *  
+ * @apiSuccess (200) {String} message ITEM WITH THE {id} HAS BEEN DELETED.
+ * 
+ *
+ * @apiSuccessExample Success-Response:
+ *     HTTP/1.1 200 OK
+ *  {
+ *   "message": "ITEM WITH THE 6003546c17aadfeba3cc8f06 HAS BEEN DELETED"
+ *   }
+ *
+ */
+
 router.delete('/:id',jwtVerifiyer,deleteStudentController);
 
 
