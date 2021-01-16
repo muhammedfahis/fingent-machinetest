@@ -15,6 +15,9 @@ app.use(bodyParser.urlencoded( {limit:'30mb',extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/tutor',tutorRouter);
 app.use('/student',studentRouter);
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html'))
+})
 
 
 module.exports =app;
