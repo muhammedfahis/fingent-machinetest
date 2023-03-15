@@ -2,7 +2,7 @@ const { generateString } = require('../libs/url/generateString');
 const URL = require('../model/url');
 
 
-const ShortenURL = async (req,res ) => {
+const shortenURL = async (req,res ) => {
     if(!req.originalUrl) {
         return res.status(400).send({
             success:false,
@@ -56,6 +56,6 @@ const getOriginalUrl = async (req,res) => {
 
 
 module.exports = {
-    ShortenURL,
+    shortenURL,
     getOriginalUrl
 }

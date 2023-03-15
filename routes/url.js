@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { ShortenURL,getOriginalUrl } = require('../controllers/url');
+const { shortenURL,getOriginalUrl } = require('../controllers/url');
 
 /**
  * @openapi
@@ -38,7 +38,7 @@ const { ShortenURL,getOriginalUrl } = require('../controllers/url');
  *             
  * 
  */
-router.post('/shorten',ShortenURL);
+router.post('/shorten',shortenURL);
 
 /**
  * @openapi
