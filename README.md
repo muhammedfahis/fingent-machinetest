@@ -1,16 +1,13 @@
-# Mark List
+# URL shortner
 ## Prerequisites <br />
-* NodeJS
-* npm
-* MongoDB Connection URI
+* DOCKER
 
 To Run Locally, Follow these steps
 1. Clone the repository \
-```git clone https://github.com/muhammedfahis/Mechine_test_markList.git```
+```git clone https://github.com/muhammedfahis/fingent-machinetest.git```
 2.  Run the following command on the cloned folder \
-```npm install```
-
+```docker compose up```
 3. Run the following command to start the server \
 ```npm start```
-4. Goto http://localhost:5000 for accessing API documentation \
+4. Goto http://localhost/docs for accessing API documentation \
 

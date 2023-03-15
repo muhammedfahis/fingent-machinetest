@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "mocha --timeout 10000",
-    "docs" : "rm -rf public && apidoc -i ./ -o ./public/ -e node_modules -e public"
+    "start": "node app.js"
   },
   "jest": {
     "testEnvironment": "node"
@@ -23,7 +21,8 @@
     "mocha": "^8.2.1",
     "mongodb": "^3.6.3",
     "mongoose": "^5.11.12",
-    "supertest": "^6.1.1"
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2"
   },
   "devDependencies": {
     "env-cmd": "^8.0.2"

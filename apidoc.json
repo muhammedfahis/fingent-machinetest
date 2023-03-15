@@ -1,9 +1,0 @@
-{
-    "name": "MarkList",
-    "version": "0.1.0",
-    "description": "Mark List Documentation",
-    "apidoc": {
-      "title": "Custom apiDoc browser title",
-      "url" : "https://github.com/muhammedfahis/Mechine_test_markList/blob/master/test.js"
-    }
-  }
